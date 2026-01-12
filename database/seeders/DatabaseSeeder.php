@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Settings;
+use App\Models\Setting;
 
 
 class DatabaseSeeder extends Seeder
@@ -25,20 +25,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            SettingsSeeder::class,
+            SettingSeeder::class,
         ]);
-    }
-}
 
-class SettingsSeeder extends Seeder
-{
-    public function run(): void
-    {
-        $user = User::where('email', 'test@example.com')->first();
-
-        $user->setting()->create([
-            'theme' => 'dark',
-            'lang'  => 'fr'
+        $this->call([
+            OrderSeeder::class,
         ]);
     }
 }
