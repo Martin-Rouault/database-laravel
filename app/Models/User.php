@@ -48,11 +48,16 @@ class User extends Authenticatable
 
     public function settings()
     {
-        return $this->hasOne(Settings::class);
+        return $this->hasOne(Setting::class);
     }
 
     public function orders()
     {
-        return $this->hasOne(Order::class);
+        return $this->hasMany(Order::class);
+    }
+
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class);
     }
 }
