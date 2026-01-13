@@ -24,6 +24,7 @@ class OrderSeeder extends Seeder
         $subscriptionOrder = SubscriptionOrder::create([
             'name' => 'Abonnement Netflix',
             'price' => 15,
+            'duration_months' => 12,
         ]);
 
         // Order lié à un ProductOrder
